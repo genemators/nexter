@@ -1,5 +1,6 @@
 import React, { useState, Component } from "react";
 import Head from "next/head";
+import "isomorphic-fetch";
 import App from "next/app";
 
 export default class Home extends React.Component {
