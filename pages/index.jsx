@@ -15,7 +15,7 @@ export default class Home extends React.Component {
 	handleSubmit = (event) => {
 		alert('A form was submitted: ' + this.state);
 
-		fetch('https://your-node-server-here.com/api/endpoint', {
+		fetch('http://dd913f614b33.ngrok.io/api/postuser', {
 			method: 'POST',
 			// We convert the React state to JSON and send it as the POST body
 			body: JSON.stringify(this.state)
