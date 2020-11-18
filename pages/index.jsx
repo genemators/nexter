@@ -7,8 +7,6 @@ export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { firstname:'',lastname:'', passport_data: '', birthday:'',location_lat:'',location_long:''}
-		this.state.handleSubmit = this.handleChange.bind(this);
-		this.state.handleChange = this.handleChange.bind(this)
 	}
 
 	handleSubmit(event){
@@ -38,14 +36,14 @@ export default class Home extends React.Component {
 					/>
 				</Head>
 				<div>
-					<form onSubmit={this.handleSubmit}>
+					<form onSubmit={this.handleSubmit.bind(this)}>
 						<div>
 							<label htmlFor='firstname'>First Name</label>
 							<input
 								name='firstname'
 								placeholder='firstname'
 								value = {this.state.firstname}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
@@ -54,7 +52,7 @@ export default class Home extends React.Component {
 								name='lastname'
 								placeholder='lastname'
 								value={this.state.lastname}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
@@ -63,7 +61,7 @@ export default class Home extends React.Component {
 								name='passport_data'
 								placeholder='passport_data'
 								value={this.state.passport_data}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
@@ -72,7 +70,7 @@ export default class Home extends React.Component {
 								name='birthday'
 								placeholder='birthday'
 								value={this.state.birthday}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
@@ -81,7 +79,7 @@ export default class Home extends React.Component {
 								name='location_lat'
 								placeholder='location_lat'
 								value={this.state.location_lat}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
@@ -90,7 +88,7 @@ export default class Home extends React.Component {
 								name='location_long'
 								placeholder='location_long'
 								value={this.state.location_long}
-								onChange={this.handleChange}
+								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
