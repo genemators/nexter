@@ -1,104 +1,41 @@
 import React, { useState, Component } from "react";
 import Head from "next/head";
-import axios from "axios";
+import App from "next/app";
 
-export default class Home extends Component() {
-	constructor(props, context) {
-		super(props, context);
-
-		this.state = {
-			firstname: "",
-			lastname: "",
-			passport_data: "",
-			birthday: "",
-			location_lat: "",
-			location_long: "",
-		};
+export default class Home extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { name: '' };
 	}
-	onChange(e) {
-		this.setState({
-			firstname: e.target.value,
-			lastname: e.target.value,
-			passport_data: e.target.value,
+
+	handleChange = (event) => {
+		this.setState({[event.target.name]: event.target.value});
+	}
+
+	handleSubmit = (event) => {
+		alert('A form was submitted: ' + this.state);
+
+		fetch('https://your-node-server-here.com/api/endpoint', {
+			method: 'POST',
+			// We convert the React state to JSON and send it as the POST body
+			body: JSON.stringify(this.state)
+		}).then(function(response) {
+			console.log(response)
+			return response.json();
 		});
-	}
-	onSubmit(e) {
-		e.preventDefault();
 
-		fetch(this.form.formAction, {
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				firstname: this.state.firstname,
-				lastname: this.state.lastname,
-				passport_data: this.state.passport_data,
-				birthday: this.state.birthday,
-				location_lat: this.state.location_lat,
-				location_long: this.state.location_long,
-			}),
-		}).then((r) => console.log(r));
-
-		this.setState({
-			firstname: "",
-			lastname: "",
-			passport_data: "",
-			birthday: "",
-			location_lat: "",
-			location_long: "",
-		});
+		event.preventDefault();
 	}
+
 	render() {
 		return (
-			<>
-				<Head>
-					<title>VTracker</title>
-					<meta property="og:title" content="VTracker" />
-					<meta
-						property="og:description"
-						content="Siz bla bla bla... VTracker"
-					/>
-				</Head>
-				<div className="App">
-					<div>
-						<form onSubmit={handleSubmit}>
-							<input
-								name="firstname"
-								type="text"
-								onChange={handleChange}
-							/>
-							<input
-								name="lastname"
-								type="text"
-								onChange={handleChange}
-							/>
-							<input
-								name="passport_data"
-								type="text"
-								onChange={handleChange}
-							/>
-							<input
-								name="birthday"
-								type="text"
-								onChange={handleChange}
-							/>
-							<input
-								name="location_lat"
-								type="number"
-								onChange={handleChange}
-							/>
-							<input
-								name="location_long"
-								type="number"
-								onChange={handleChange}
-							/>
-							<br />
-							<button>Submit</button>
-						</form>
-					</div>
-				</div>
-			</>
+			<form onSubmit={this.handleSubmit}>
+				<label>
+					Name:
+					<input type="text" value={this.state.value} name="name" onChange={this.handleChange} />
+				</label>
+				<input type="submit" value="Submit" />
+			</form>
 		);
 	}
 }
