@@ -29,13 +29,25 @@ export default class Home extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label>
-					Name:
-					<input type="text" value={this.state.value} name="name" onChange={this.handleChange} />
-				</label>
-				<input type="submit" value="Submit" />
-			</form>
+			<>
+				<Head>
+					<title>VTracker</title>
+					<meta property="og:title" content="VTracker" />
+					<meta
+						property="og:description"
+						content="Siz bla bla bla... VTracker"
+					/>
+				</Head>
+				<div>
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							Name:
+							<input type="text" value={this.state.value} name="name" onChange={this.handleChange} />
+						</label>
+						<input type="submit" value="Submit" />
+					</form>
+				</div>
+			</>
 		);
 	}
 }
