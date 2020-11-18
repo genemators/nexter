@@ -5,22 +5,46 @@ import "isomorphic-fetch";
 export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { firstname:'',lastname:'', passport_data: '', birthday:'',location_lat:'',location_long:''}
+		this.state = {
+			firstname: "",
+			lastname: "",
+			passport_data: "",
+			birthday: "",
+			location_lat: "",
+			location_long: "",
+		};
 	}
 
-	handleSubmit(event){
-		const { firstname, lastname, passport_data, birthday, location_lat, location_long} = this.state
-		event.preventDefault()
-		fetch('http://dd913f614b33.ngrok.io/api/postuser', {
-			method: 'POST',
-			body: { firstname, lastname, passport_data, birthday, location_lat, location_long }
-		}).then(response => {console.log(response)});
+	handleSubmit(event) {
+		const {
+			firstname,
+			lastname,
+			passport_data,
+			birthday,
+			location_lat,
+			location_long,
+		} = this.state;
+		event.preventDefault();
+		console.log(firstname + " " + lastname);
+		fetch("http://dd913f614b33.ngrok.io/api/postuser", {
+			method: "POST",
+			body: {
+				firstname,
+				lastname,
+				passport_data,
+				birthday,
+				location_lat,
+				location_long,
+			},
+		}).then((response) => {
+			console.log(response);
+		});
 	}
 
-	handleChange(event){
+	handleChange(event) {
 		this.setState({
-			[event.target.name] : event.target.value
-		})
+			[event.target.name]: event.target.value,
+		});
 	}
 
 	render() {
@@ -37,55 +61,55 @@ export default class Home extends React.Component {
 				<div>
 					<form onSubmit={this.handleSubmit.bind(this)}>
 						<div>
-							<label htmlFor='firstname'>First Name</label>
+							<label htmlFor="firstname">First Name</label>
 							<input
-								name='firstname'
-								placeholder='firstname'
-								value = {this.state.firstname}
+								name="firstname"
+								placeholder="firstname"
+								value={this.state.firstname}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
-							<label htmlFor='lastname'>lastname</label>
+							<label htmlFor="lastname">lastname</label>
 							<input
-								name='lastname'
-								placeholder='lastname'
+								name="lastname"
+								placeholder="lastname"
 								value={this.state.lastname}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
-							<label htmlFor='passport_data'>passport_data</label>
+							<label htmlFor="passport_data">passport_data</label>
 							<input
-								name='passport_data'
-								placeholder='passport_data'
+								name="passport_data"
+								placeholder="passport_data"
 								value={this.state.passport_data}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
-							<label htmlFor='birthday'>birthday</label>
+							<label htmlFor="birthday">birthday</label>
 							<input
-								name='birthday'
-								placeholder='birthday'
+								name="birthday"
+								placeholder="birthday"
 								value={this.state.birthday}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
-							<label htmlFor='location_lat'>location_lat</label>
+							<label htmlFor="location_lat">location_lat</label>
 							<input
-								name='location_lat'
-								placeholder='location_lat'
+								name="location_lat"
+								placeholder="location_lat"
 								value={this.state.location_lat}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</div>
 						<div>
-							<label htmlFor='location_long'>location_long</label>
+							<label htmlFor="location_long">location_long</label>
 							<input
-								name='location_long'
-								placeholder='location_long'
+								name="location_long"
+								placeholder="location_long"
 								value={this.state.location_long}
 								onChange={this.handleChange.bind(this)}
 							/>

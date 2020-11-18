@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2831c262-31e2-456d-9536-f21d23c56957" name="Default Changelist" comment="" />
+    <list default="true" id="2831c262-31e2-456d-9536-f21d23c56957" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sw.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/sw.js.map" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +62,7 @@
     <property name="ts.external.directory.path" value="D:\Projects\hackathon\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="npm.format">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -110,6 +114,7 @@
       <workItem from="1605703770285" duration="114000" />
       <workItem from="1605704811970" duration="1666000" />
       <workItem from="1605706649177" duration="3721000" />
+      <workItem from="1605712341327" duration="171000" />
     </task>
     <servers />
   </component>
@@ -133,22 +138,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="310" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605693649310" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1605710400276">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1605712510469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605710400276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1605710400276">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605712510469" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1605712510469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605710400276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1605710400276">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605712510469" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1605712510469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605710400276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1605710400276">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605712510469" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1605712510469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605710400276" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605712510469" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1605693611584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
