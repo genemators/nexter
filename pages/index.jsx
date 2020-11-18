@@ -6,26 +6,24 @@ import App from "next/app";
 export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: '' };
+		this.state = { firstname:'',lastname:'', passport_data: '', birthday:'',location_lat:'',location_long:''}
+		this.state.handleSubmit = this.handleChange.bind(this);
+		this.state.handleChange = this.handleChange.bind(this)
 	}
 
-	handleChange = (event) => {
-		this.setState({[event.target.name]: event.target.value});
-	}
-
-	handleSubmit = (event) => {
-		alert('A form was submitted: ' + this.state);
-
+	handleSubmit(event){
+		const { firstname, lastname, passport_data, birthday, location_lat, location_long} = this.state
+		event.preventDefault()
 		fetch('http://dd913f614b33.ngrok.io/api/postuser', {
 			method: 'POST',
-			// We convert the React state to JSON and send it as the POST body
-			body: JSON.stringify(this.state)
-		}).then(function(response) {
-			console.log(response)
-			return response.json();
-		});
+			body: { firstname, lastname, passport_data, birthday, location_lat, location_long }
+		}).then(response => {console.log(response)});
+	}
 
-		event.preventDefault();
+	handleChange(event){
+		this.setState({
+			[event.target.name] : event.target.value
+		})
 	}
 
 	render() {
@@ -41,11 +39,63 @@ export default class Home extends React.Component {
 				</Head>
 				<div>
 					<form onSubmit={this.handleSubmit}>
-						<label>
-							Name:
-							<input type="text" value={this.state.value} name="name" onChange={this.handleChange} />
-						</label>
-						<input type="submit" value="Submit" />
+						<div>
+							<label htmlFor='firstname'>First Name</label>
+							<input
+								name='firstname'
+								placeholder='firstname'
+								value = {this.state.firstname}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<label htmlFor='lastname'>lastname</label>
+							<input
+								name='lastname'
+								placeholder='lastname'
+								value={this.state.lastname}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<label htmlFor='passport_data'>passport_data</label>
+							<input
+								name='passport_data'
+								placeholder='passport_data'
+								value={this.state.passport_data}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<label htmlFor='birthday'>birthday</label>
+							<input
+								name='birthday'
+								placeholder='birthday'
+								value={this.state.birthday}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<label htmlFor='location_lat'>location_lat</label>
+							<input
+								name='location_lat'
+								placeholder='location_lat'
+								value={this.state.location_lat}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<label htmlFor='location_long'>location_long</label>
+							<input
+								name='location_long'
+								placeholder='location_long'
+								value={this.state.location_long}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div>
+							<button>Proceed</button>
+						</div>
 					</form>
 				</div>
 			</>
