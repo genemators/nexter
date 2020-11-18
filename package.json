@@ -1,0 +1,52 @@
+{
+	"name": "hackathon",
+	"version": "1.0.0",
+	"description": "Hackathon application made to win!",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"test": "npm run format:check",
+		"format": "prettier --write --check \"**/*.{js,json,md}\"\n",
+		"format:check": "prettier --check \"**/*.{js,json,md}\"\n",
+		"update": "npm update"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chiseldevs/hackathon.git"
+	},
+	"engines": {
+		"node": ">=12.17.0",
+		"npm": ">=6.14.0",
+		"yarn": ">=1.22.0"
+	},
+	"keywords": [
+		"Hackathon",
+		"Application",
+		"PWA",
+		"Next",
+		"JS",
+		"Linted"
+	],
+	"author": "Genemator Sakhib <genemators@gmail.com> (https://genemator.me)",
+	"license": "CC0-1.0",
+	"bugs": {
+		"url": "https://github.com/chiseldevs/hackathon/issues"
+	},
+	"homepage": "https://github.com/chiseldevs/hackathon#readme",
+	"dependencies": {
+		"isomorphic-fetch": "^3.0.0",
+		"next": "^10.0.1",
+		"next-pwa": "^3.1.5",
+		"nprogress": "^0.2.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"sw-precache-webpack-plugin": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.8",
+		"@types/react": "^16.9.56",
+		"prettier": "^2.1.2",
+		"typescript": "^4.0.5"
+	}
+}
